@@ -1,0 +1,43 @@
+<!-- include header -->
+<%-include('_header') %>
+<!--/include header  -->
+
+<body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">All Projects</a></li>
+         
+        </ul>
+      </nav>
+    </header>
+    <body>
+      
+    
+    <main>
+      <h1>All Projects</h1>
+     <button id="create-Project_btn"> <a href="/createProject">Create New</a></button>
+     
+      <ul class="project-list">
+      <% for(let i=0; i<Projects.length; i++){%>
+       
+        <li>
+          <a href="/projectDetails?id=<%=Projects[i]._id%>">
+            <h2><%= Projects[i].title %></h2>
+            <p>Description:  <%= Projects[i].description %></p>
+            <h4>Author: <%= Projects[i].author %></h4>
+          </a>
+          <a href="/api/projects/<%=Projects[i]._id%>" > Delete</a>
+        </li>
+        <%}%>
+        
+      </ul>
+
+    </main>
+  </body>
+ 
+<!-- include footer -->
+<%-include('_footer') %>
+<!--/include footer  -->
+

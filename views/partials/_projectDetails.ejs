@@ -1,0 +1,105 @@
+<!-- include header -->
+<%-include('_header') %>
+<!--/include header  -->
+
+<body>
+    
+    <header>
+        <nav>
+          <ul>
+           
+                <li><a href="/">Home</a></li>
+                <li><a href="/allProjects">All Projects</a></li>
+          
+           
+         
+            
+          </ul>
+        </nav>
+        <a href="/createIssue/<%=details._id%>"><button class="create-issue-btn">Create Issue</button></a>
+        
+      </header>
+      <div class="filter-section">
+        <h2>Filter Issues</h2>
+        <div class="filter-group">
+           
+          <label for="label-filter">Labels:</label>
+          <select id="label-filter" >
+            <option value="bug">Bug</option>
+            <option value="enhancement">Enhancement</option>
+            <option value="feature">Feature</option>
+            <option value="design">Design</option>
+            <option value="documentation">Documentation</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="author-filter">Author:</label>
+          <select id="author-filter">
+            <option value="">All Authors</option>
+            <option value="user1">User1</option>
+            <option value="user2">User2</option>
+            <option value="user3">User3</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="search-filter">Search:</label>
+          <input type="text" id="search-filter" placeholder="Title or Description">
+        </div>
+        <button class="create-issue-btn">Filter</button>
+      </div>
+      
+
+    <div class="project-header">
+         <h1 class="project-name"><%=details.title%></h1> 
+         <h2 class="project-author"><%=details.author%></h2>
+        <p class="project-description"><%=details.description%></p> 
+      </div>
+
+      <div class="issue-list">
+        <h2>Issues</h2>
+        <ul>
+
+          <!-- <li>
+            <div class="issue-info">
+              <div class="issue-title"></div>
+              <div class="issue-meta">
+                <span class="issue-label label-feature">Feature</span>
+                <span class="issue-author">Jane Smith</span>
+                <span class="issue-date">1 week ago</span>
+              </div>
+              <div class="issue-description">
+                 issuesInfo.description 
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="issue-info">
+                <div class="issue-title">Another Issue Title</div>
+                <div class="issue-meta">
+                  <span class="issue-label label-bug">bug</span>
+                  <span class="issue-author">Jane Smith</span>
+                  <span class="issue-date">1 week ago</span>
+                </div>
+                <div class="issue-description">
+                  This is another issue description.
+                </div>
+              </div>
+            </li> -->
+           
+    <% if(issueData){ %>
+
+      
+        <%-include('_issues') %>  
+  
+
+ <% } %>   
+      
+
+   
+      
+
+
+<!-- include footer -->
+<!-- <%-include('_footer') %> -->
+<!--/include footer  -->

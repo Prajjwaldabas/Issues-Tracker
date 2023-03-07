@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+
+  .hero {
+  background-image: url('https://wallpaper-house.com/data/out/10/wallpaper2you_387242.jpg');
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-content {
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .features {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+  }
+  
+  .features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .features ul {
+    list-style:disc;
+    margin-left:100px;
+    
+  }
+  
+  .features li {
+    font-size: larger;
+    margin-bottom: 10px;
+  }
+  
+  .pricing {
+    background-color: #f4f4f4;
+    padding: 50px;
+    font-size: larger;
+  }
+  
+  .pricing h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .pricing p {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .pricing ul {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .pricing li {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #666;
+  }
+  
+  footer {
+    font-size: larger;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin-bottom: 0;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
