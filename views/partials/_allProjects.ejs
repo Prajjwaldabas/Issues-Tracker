@@ -17,18 +17,19 @@
     
     <main>
       <h1>All Projects</h1>
-     <button id="create-Project_btn"> <a href="/createProject">Create New</a></button>
+      <a href="/createProject"> <button id="create-Project_btn">Create New </button></a>
      
       <ul class="project-list">
       <% for(let i=0; i<Projects.length; i++){%>
        
         <li>
-          <a href="/projectDetails?id=<%=Projects[i]._id%>">
-            <h2><%= Projects[i].title %></h2>
+          
+            <h3>Title:&nbsp   <%= Projects[i].title %></h3>
             <p>Description:  <%= Projects[i].description %></p>
-            <h4>Author: <%= Projects[i].author %></h4>
-          </a>
-          <a href="/api/projects/<%=Projects[i]._id%>" > Delete</a>
+            <h5>Author: <%= Projects[i].author %></h5>
+         
+          <div id="open_btn"> <a href="/projectDetails?id=<%=Projects[i]._id%>"> Open</a></div>
+         <div id="delete_btn"> <a href="/api/projects/delete/<%=Projects[i]._id%>" > Delete</a></div>
         </li>
         <%}%>
         

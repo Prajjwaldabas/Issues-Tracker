@@ -46,15 +46,42 @@
     flex-direction: column;
     align-items: center;
   }
-  form div {
+  form div input,textarea{
     margin-bottom: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 
   }
-  
+  #issuetype_input{
+    position: relative;
+    left: 15%;
+    top:10%;
+    
+    display: flex;
+    flex-direction: row;
+    
+    justify-content:space-around;
+  }
+  #issuetype_input input{
+  margin-left: 20px;
+  margin-top: 10px;
+  }
+  #issuetype_input p{
+    font-weight: bold;
+  margin-top: 5px;
+  margin-left: 5px;
+  }
+
   label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+  }
+  #issue_label {
+    display: block;
+    font-weight: bold;
+    position: absolute;
+    top: 11%;
+    left: -81px;
   }
   
   .inputs {
@@ -64,7 +91,10 @@
     border-radius: 4px;
   }
   
-  button[type="submit"] {
+  #Create_issue_btn{
+    position: relative;
+    
+    right:5%;
     background-color:#333;
     border: none;
     color: white;
@@ -78,7 +108,7 @@
     transition-duration: 0.4s;
   }
   
-  button[type="submit"]:hover {
+  #Create_issue_btn:hover {
     background-color: #757575;
   }
   
@@ -93,8 +123,7 @@
   }
   
   footer{
-    
-    
+    margin-top:6%;
     width: 100%;
     background-color: #333;
     height: 80px;

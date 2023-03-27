@@ -5,14 +5,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'poppins', sans-serif;
   }
   
   body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #fff;
+    background-color:#f5f5f5;
   }
   
   header {
@@ -22,6 +22,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    overflow-y: scroll;
+
   }
   
   nav ul {
@@ -39,8 +41,10 @@
   }
   #create-Project_btn{
     position: relative;
+    cursor: pointer;
+    font-size: 16px;
     left:920px;
-    bottom: 20px;
+    bottom: 60px;
     border-radius: 10px;
 padding: 10px;
 width: 120px;
@@ -51,9 +55,11 @@ background-color: #333;
   #create-Project_btn a{
     color: white;
     text-decoration: none;
+    font-size: 16px;
   } 
 #create-Project_btn:hover{
     opacity: 0.9;
+   
 }
   
   main {
@@ -69,21 +75,60 @@ background-color: #333;
     list-style: none;
     margin: 0 auto;
     max-width: 600px;
-    
+    position: relative;
+    top:10%;
   }
   
   .project-list li {
-    border: 1px solid #ccc;
+    position: relative;
+  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid #a19e9e;
     margin-bottom: 20px;
     padding: 20px;
+   color: black;
     border-radius: 20px;
+    background-color: rgb(231,231,231) ;
   }
-  
+  #delete_btn:hover {
+    background-color: #65c169;
+  }
+  #open_btn:hover {
+    background-color: #65c169;
+  }
+    
   .project-list li a {
-    color: #333;
+   
+    color: white;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   
+
+  #delete_btn{
+    font-size: 16px;
+    font-weight: 400;
+  text-align: center;
+    background-color:  #2e7e32;
+    position: relative;
+    left:87%;
+    bottom:2%;
+    width: 80px;
+    border-radius: 5px;
+  }
+  #open_btn{
+    font-size: 16px;
+    font-weight: 400;
+  text-align: center;
+    background-color: #2e7e32;
+    position: absolute;
+    left:69%;
+  
+    width: 80px;
+    border-radius: 5px;
+  }
   .project-list li h2 {
     margin-bottom: 10px;
   }
@@ -93,8 +138,10 @@ background-color: #333;
   }
   
   footer {
-    position: absolute;
-    bottom: 0;
+    
+     
+    position: relative !important;
+    bottom: 0 !important;
     width: 100%;
     background-color: #333;
     color: #fff;

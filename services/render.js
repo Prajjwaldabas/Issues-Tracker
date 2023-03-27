@@ -1,83 +1,84 @@
-const axios = require('axios')
-const IssuesDB = require('./../models/issues');
+// require axios
+const axios = require("axios");
 
+//requires issues db
+const IssuesDB = require("./../models/issues");
 
-module.exports.homeRoutes=(req,res)=>{
-    res.render("../views/partials/_home");
-}
-module.exports.allProjectsRoutes= (req,res)=>{
-// make a get request to api/projects 
-axios.get('http://localhost:3000/api/projects')
-.then(function(response){
-   
-    res.render("../views/partials/_allProjects",{Projects: response.data});
-})
-.catch(err=>{
-    res.send(err)
-})
-    
-}
+// function for rnedering home page
+module.exports.homeRoutes = (req, res) => {
+  res.render("../views/partials/_home");
+};
 
+// function for rendering all projects
+module.exports.allProjectsRoutes = (req, res) => {
+  // make a get request to api/projects
+  axios
+    .get("http://localhost:3000/api/projects")
+    .then(function (response) {
+      res.render("../views/partials/_allProjects", { Projects: response.data });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 
-module.exports.projectDetailsRoutes=async (req,res)=>{
-    const id = req.query.id;
-    console.log(id);
-    console.log(req.url);
-    // const issueData= await IssuesDB.find();
-   const issueData= await IssuesDB.findById({_id:id});
-        // if(!issueData){
-        //     axios.get('http://localhost:3000/api/projects',{params:{id:req.query.id}})
-        //     .then(function(projectdetails){
-               
-        //         res.render("../views/partials/_projectDetails",{details: projectdetails.data});
-            
-        //     })
-        //     .catch(err=>{
-        //         res.send(err)
-        //     })      
-        // }
+//function for showing detils according to the project
 
-        axios.get('http://localhost:3000/api/projects',{params:{id:req.query.id}})
-            .then(function(projectdetails){
-               
-                res.render("../views/partials/_projectDetails",{details: projectdetails.data, issueData});
-            
-            })
-            .catch(err=>{
-                res.send(err)
-            })
-    // axios.get('http://localhost:3000/api/issues')
-    // .then(function(issueDetails){
+module.exports.projectDetailsRoutes = async (req, res) => {
+  const id = req.query.id;
+
+  console.log("another id",id);
+  // console.log(req.url);
+
+    const issueData= await IssuesDB.find({projectID:id});
+
+ console.log(issueData)
+
+ //if issue dat not found then only rending project details not issue details
+ if (issueData==null) {
+   axios
+      .get(`http://localhost:3000/api/project/${id}`)
+
+     .then(function (projectdetails) {
+        console.log(projectdetails.data)
+       res.render("../views/partials/_projectDetails", { details: projectdetails.data });
+       console.log("null data")
        
-    //     res.render("../views/partials/_projectDetails",{issuesInfo: issueDetails.data});
+     })
+     .catch((err) => {
+       res.send(err);
+     });
     
-    // })
-    // .catch(err=>{
-    //     res.send(err)s
-    // })
-   
+ }
+ // rending all details 
+ else{
+
+ axios
+ .get(`http://localhost:3000/api/project/${id}`)
+   .then(function (projectdetails) {
+    console.log("$",id)
+     res.render("../views/partials/_projectDetails", {
+       details: projectdetails.data,
+       issueData
+     });
+    
+   })
+   .catch((err) => {
+     res.send(err);
+    });
+    
+}
+}
+
+;
+//function to render create project page
+module.exports.createProjectRoutes = (req, res) => {
+  res.render("../views/partials/_createProject");
+};
+
+//fucntion to render create issue page
+module.exports.createIssueRoute = (req, res) => {
+  res.render("../views/partials/_createIssue");
+
  
-
-}
-
-
-module.exports.createProjectRoutes=(req,res)=>{
-    res.render("../views/partials/_createProject");
-}
-
-module.exports.createIssueRoute=(req,res)=>{
-
-
-    res.render("../views/partials/_createIssue")
-
-    // axios.get('http://localhost:3000/api/issues',{params:{id:req.params.id}})
-    // .then(function(issue)
-    //     res.render("../views/partials/_createIssue",{Issues: issue.data});
-    //     console.log(Issues)
-    // })
-    // .catch(err=>{
-    //     res.send(err)
-    // })
-    
-    
-}
+};

@@ -74,10 +74,11 @@
     border: 1px solid #ccc;
   }
   
-  .create-project-form button {
+  #Create_project_btn {
+    
     display: block;
     margin: 0 auto;
-    border-radius: 20px;
+    
     padding: 10px 20px;
     background-color: #333;
     color: #fff;

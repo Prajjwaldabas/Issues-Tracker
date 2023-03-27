@@ -2,15 +2,19 @@
 <% for(let i=0; i<issueData.length; i++){ %>
 <li>
   <div class="issue-info">
-    <div class="issue-title"><%-issueData[i].title  %></div>
+    <div class="issue-title"> <p> Issue Title: <%-issueData[i].title%></p></div>
+    <div class="issue-description">
+       <p>Description: <%-issueData[i].description%> </p>
+     </div>
     <div class="issue-meta">
-      <span class="issue-label label-feature">Feature</span>
-      <span class="issue-author"> <%-issueData[i].author  %> </span>
+      <span class="issue-author "> <p>Author: <%-issueData[i].author%></p> </span>
+      <span class="issue-label label-feature"><p>Type: <%-issueData[i].IssueType  %></p></span>
       <span class="issue-date">1 week ago</span>
     </div>
-    <div class="issue-description">
-     <%-issueData[i].description  %> 
-    </div>
+    
   </div>
 </li>
 <% } %> 
+
+
+

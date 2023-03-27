@@ -8,18 +8,18 @@
     <h1>Issue Tracker</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Create Project</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/allProjects">Projects</a></li>
+        
       </ul>
     </nav>
   </header>
   
   <main>
     <h2>Create Issue</h2>
-    <form action="/api/issues" method="post" id="form">
+    <form action="/api/issues" method="post"  id="form">
       <div>
-     
+        <input type="hidden" id="postId" name="postId"></input>       
         <label for="title">Title:</label>
         <input type="text"  class="inputs" id="title" name="title" required>
       </div>
@@ -29,24 +29,33 @@
       </div>
       
       <div>
-        <label for="priority">Issue Type:</label>
-        <inpu id="issuetype"  class="inputs" name="IssueType" required>
-            <input  type="checkbox" value="enhancement">Enhancement</>     </input>
-            <input  type="checkbox" value="feature">Feature</></input>
-            <input  type="checkbox" value="design">Design</></input>
-            <input  type="checkbox" value="documentation">Documentation</></input>
-            <input  type="checkbox" value="bug">Bug</></input>
+        <label for="labels">Author:</label>
+        <input type="text"  class="inputs" id="author" name="author" >
+      </div>
+      <div>
+
+        
+       <div id="issuetype_input">
+        <label id="issue_label" for="priority">Issue Type:</label>
+            <input  type="checkbox" value="enhancement" name="issuetype" ><p>Enhancement</p> </>     </input>
+            <input  type="checkbox" value="feature" name="issuetype"><p>Feature</p></></input>
+            <input  type="checkbox" value="design" name="issuetype" ><p>Design</p></></input>
+            <input  type="checkbox" value="documentation" name="issuetype"><p>Documentation</p></></input>
+            <input  type="checkbox" value="bug" name="issuetype"><p>Bug</p></></input>
+          </div>
         
       </div>
+      
       <div>
-        <label for="labels">Author:</label>
-        <input type="text"  class="inputs" id="author" name="author">
-      </div>
-      <div>
-        <button type="submit">Create Issue</button>
+        <button id="Create_issue_btn" type="submit">Create Issue</button>
       </div>
     </form>
   </main>
+
+  <script>
+    const id = window.location.href.split("/")[4]
+    document.getElementById('postId').value  = id
+    </script>
  <!-- include footer -->
 <%-include('_footer') %>
 <!--/include footer  -->

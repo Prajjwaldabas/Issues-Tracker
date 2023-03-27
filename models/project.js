@@ -1,6 +1,8 @@
-const mongoose= require('mongoose')
-const {Schema} = require('mongoose');
+// require mongoose
 
+const mongoose= require('mongoose')
+
+//making schema for Projects
 const Projects = new mongoose.Schema(
     {
     title: {
@@ -10,11 +12,7 @@ const Projects = new mongoose.Schema(
      description:{
         type:String,
         required:true
-     },
-     issueID: {
-        type: Schema.Types.ObjectId,
-        ref: 'Projectdb'
-     },    
+     },  
 author:{
     type:String
 }
@@ -23,3 +21,4 @@ author:{
 
 const Projectdb= mongoose.model('Projectdb',Projects)
 module.exports= Projectdb;
+//exporting project db
