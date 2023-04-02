@@ -54,7 +54,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
  else{
 
  axios
- .get(`http://localhost:10000/api/project/${id}`)
+ .get(`http://localhost:3000/api/project/${id}`)
    .then(function (projectdetails) {
     console.log("$",id)
      res.render("../views/partials/_projectDetails", {
