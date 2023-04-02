@@ -13,7 +13,7 @@ module.exports.homeRoutes = (req, res) => {
 module.exports.allProjectsRoutes = (req, res) => {
   // make a get request to api/projects
   axios
-    .get(`http://localhost:3000/api/project/api/projects`)
+    .get(`http://localhost:3000/api/projects`)
     .then(function (response) {
       res.render("../views/partials/_allProjects", { Projects: response.data });
     })
