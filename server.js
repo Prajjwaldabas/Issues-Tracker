@@ -1,12 +1,13 @@
 const express = require('express')
 const dotenv= require('dotenv')
+dotenv.config({path: 'config.env'})
 const app = express();
 const morgan = require('morgan')
 const bodyparser= require("body-parser")
 const path = require('path')
 const db = require('./config/mongoose');
 
-dotenv.config({path: 'config.env'})
+
 const PORT = process.env.PORT || 10000
 
 // log requests

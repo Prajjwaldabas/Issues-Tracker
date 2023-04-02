@@ -13,7 +13,7 @@ module.exports.homeRoutes = (req, res) => {
 module.exports.allProjectsRoutes = (req, res) => {
   // make a get request to api/projects
   axios
-    .get(`https://issues-tracker-prajjwal.onrender.com/api/projects`)
+    .get(`http://localhost:3000/api/project/api/projects`)
     .then(function (response) {
       res.render("../views/partials/_allProjects", { Projects: response.data });
     })
@@ -37,7 +37,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
  //if issue dat not found then only rending project details not issue details
  if (issueData==null) {
    axios
-      .get(`https://issues-tracker-prajjwal.onrender.com/api/project/${id}`)
+      .get(`http://localhost:3000/api/project/${id}`)
 
      .then(function (projectdetails) {
         console.log(projectdetails.data)
@@ -54,7 +54,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
  else{
 
  axios
- .get(`https://issues-tracker-prajjwal.onrender.com/api/project/${id}`)
+ .get(`http://localhost:10000/api/project/${id}`)
    .then(function (projectdetails) {
     console.log("$",id)
      res.render("../views/partials/_projectDetails", {
