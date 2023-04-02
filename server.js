@@ -7,7 +7,7 @@ const path = require('path')
 const db = require('./config/mongoose');
 
 dotenv.config({path: 'config.env'})
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 10000
 
 // log requests
 app.use(morgan('tiny'));

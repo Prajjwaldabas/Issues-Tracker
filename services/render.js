@@ -13,7 +13,7 @@ module.exports.homeRoutes = (req, res) => {
 module.exports.allProjectsRoutes = (req, res) => {
   // make a get request to api/projects
   axios
-    .get("http://localhost:3000/api/projects")
+    .get(`http://${req.hostname}:${process.env.PORT}/api/projects`)
     .then(function (response) {
       res.render("../views/partials/_allProjects", { Projects: response.data });
     })
@@ -37,7 +37,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
  //if issue dat not found then only rending project details not issue details
  if (issueData==null) {
    axios
-      .get(`http://localhost:3000/api/project/${id}`)
+      .get(`http://${req.hostname}:${process.env.PORT}/api/project/${id}`)
 
      .then(function (projectdetails) {
         console.log(projectdetails.data)
@@ -54,7 +54,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
  else{
 
  axios
- .get(`http://localhost:3000/api/project/${id}`)
+ .get(`http://${req.hostname}:${process.env.PORT}/api/project/${id}`)
    .then(function (projectdetails) {
     console.log("$",id)
      res.render("../views/partials/_projectDetails", {
