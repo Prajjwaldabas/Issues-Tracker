@@ -28,7 +28,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
   const id = req.query.id;
 
   console.log("another id",id);
-  // console.log(req.url);
+  
 
     const issueData= await IssuesDB.find({projectID:id});
 
