@@ -22,7 +22,7 @@ app.set("view engine","ejs")
 
 // app.set("views",path.resolve(__dirname,"views/ejs") )
 // above line is for nested ejs files in views folder
-
+// 
 
 //load assets
 app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
