@@ -89,7 +89,7 @@ else{
     // as issue data is null so just sending project details further to the ejs file
     //fetching all project details with the given id
    axios
-      .get(`http://localhost:3000/api/project/${id}`, {
+      .get(`https://issues-tracker-prajjwal.onrender.com/api/project/${id}`, {
        params: { id: id },
        })
 
@@ -106,7 +106,7 @@ else{
  else{
 // sending all project details as well as issuedata further to the ejs file 
  axios
- .get(`http://localhost:3000/api/project/${id}`, {
+ .get(`https://issues-tracker-prajjwal.onrender.com/api/project/${id}`, {
     params: { id: req.query.id },
   })
    .then(function (projectdetails) {

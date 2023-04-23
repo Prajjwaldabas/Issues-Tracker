@@ -34,7 +34,7 @@ module.exports.projectDetailsRoutes = async (req, res) => {
 
  console.log(issueData)
 
- //if issue dat not found then only rending project details not issue details
+ //if issue data not found then only rending project details not issue details
  if (issueData==null) {
    axios
       .get(`https://issues-tracker-prajjwal.onrender.com/api/project/${id}`)
